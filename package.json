@@ -1,0 +1,24 @@
+{
+  "name": "firewall-blocklist-optimizer",
+  "version": "3.0.0",
+  "main": "firewall.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "firewall",
+    "blocklist",
+    "fortigate",
+    "ip-blocklist",
+    "cidr-optimizer",
+    "security-tools",
+    "aggregator"
+  ],
+  "author": "xdio0",
+  "license": "MIT",
+  "description": "A Node.js tool to download, aggregate, deduplicate, and optimize IP and domain blocklists for firewall ingestion",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "ipaddr.js": "^2.4.0"
+  }
+}

@@ -1,0 +1,6 @@
+# allowlist.txt
+# Exclude my business website
+example-safe-domain.com
+
+# Exclude trusted remote branch IP
+203.0.113.10

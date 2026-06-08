@@ -1,0 +1,32 @@
+https://raw.githubusercontent.com/blocklistproject/Lists/master/malware.ip;Éxito;No disponible
+https://team-cymru.org/Services/Bogons/bogon-bn-nonagg.txt;Éxito;Thu, 19 Feb 2015 00:18:36 GMT
+https://rules.emergingthreats.net/blockrules/compromised-ips.txt;Éxito;Fri, 05 Jun 2026 20:09:38 GMT
+https://rules.emergingthreats.net/fwrules/emerging-PIX-DROP.rules;Éxito;Fri, 05 Jun 2026 04:30:01 GMT
+https://v.firebog.net/hosts/static/w3kbl.txt;Éxito;Wed, 13 Mar 2024 03:35:36 GMT
+https://raw.githubusercontent.com/AssoEchap/stalkerware-indicators/master/generated/hosts;Éxito;No disponible
+https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt;Éxito;No disponible
+https://iplists.firehol.org/files/botscout_1d.ipset;Éxito;Mon, 08 Jun 2026 12:23:37 GMT
+https://iplists.firehol.org/files/cleantalk_1d.ipset;Éxito;Thu, 24 Jul 2025 11:48:53 GMT
+https://iplists.firehol.org/files/cybercrime.ipset;Éxito;Sun, 07 Jun 2026 07:35:48 GMT
+https://iplists.firehol.org/files/gpf_comics.ipset;Éxito;Sun, 07 Jun 2026 15:58:12 GMT
+https://iplists.firehol.org/files/tor_exits_1d.ipset;Éxito;Mon, 08 Jun 2026 12:23:37 GMT
+https://iplists.firehol.org/files/stopforumspam_90d.ipset;Éxito;Mon, 08 Jun 2026 09:54:29 GMT
+https://iplists.firehol.org/files/iblocklist_abuse_zeus.netset;Éxito;Sun, 20 Apr 2025 01:43:45 GMT
+https://iplists.firehol.org/files/firehol_level4.netset;Éxito;Mon, 08 Jun 2026 12:23:38 GMT
+https://iplists.firehol.org/files/firehol_abusers_30d.netset;Éxito;Mon, 08 Jun 2026 08:16:42 GMT
+https://iplists.firehol.org/files/et_tor.ipset;Éxito;Sat, 06 Jun 2026 00:58:19 GMT
+https://iplists.firehol.org/files/dshield_30d.netset;Éxito;Mon, 08 Jun 2026 08:16:42 GMT
+https://iplists.firehol.org/files/sslproxies_30d.ipset;Éxito;Mon, 08 Jun 2026 12:23:37 GMT
+https://iplists.firehol.org/files/socks_proxy_30d.ipset;Éxito;Mon, 08 Jun 2026 12:23:37 GMT
+https://iplists.firehol.org/files/firehol_level1.netset;Éxito;Mon, 08 Jun 2026 12:23:38 GMT
+http://rules.emergingthreats.net/blockrules/compromised-ips.txt;Éxito;Fri, 05 Jun 2026 20:09:38 GMT
+http://rules.emergingthreats.net/fwrules/emerging-PIX-DROP.rules;Éxito;Fri, 05 Jun 2026 04:30:01 GMT
+https://www.binarydefense.com/banlist.txt;Éxito;Sun, 07 Jun 2026 23:58:55 GMT
+https://v.firebog.net/hosts/Prigent-Malware.txt;Éxito;Mon, 08 Jun 2026 14:00:06 GMT
+https://mcfp.felk.cvut.cz/publicDatasets/CTU-AIPP-BlackList/Todays-Blacklists/AIP-Alpha7-latest.csv;Éxito;Sun, 07 Jun 2026 23:06:05 GMT
+http://cinsscore.com/list/ci-badguys.txt;Éxito;Mon, 08 Jun 2026 14:04:01 GMT
+https://rules.emergingthreats.net/fwrules/emerging-Block-IPs.txt;Éxito;Fri, 05 Jun 2026 04:30:01 GMT
+https://iplists.firehol.org/files/firehol_webclient.netset;Éxito;Sun, 07 Jun 2026 07:35:46 GMT
+https://iplists.firehol.org/files/dyndns_ponmocup.ipset;Éxito;Wed, 05 Jun 2024 07:57:43 GMT
+https://lists.blocklist.de/lists/bruteforcelogin.txt;Éxito;Mon, 08 Jun 2026 14:12:12 GMT
+https://danger.rulez.sk/projects/bruteforceblocker/blist.php;Éxito;Mon, 08 Jun 2026 14:16:18 GMT

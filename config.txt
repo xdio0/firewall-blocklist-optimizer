@@ -1,0 +1,6 @@
+# Output folder for the processed list files
+outputWebDir=C:\\SYS\www\\firewall_rules
+
+# Maximum lines per output file (useful for firewall import limits). If 0, limits are disabled.
+# maxLinesPerFile=0
+maxLinesPerFile=130000

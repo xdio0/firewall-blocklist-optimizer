@@ -141,3 +141,10 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Downloads & Cache
+downloads/*
+!downloads/.gitkeep
+
+downloads_cache/*
+!downloads_cache/.gitkeep
