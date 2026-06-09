@@ -129,11 +129,12 @@ const leerConfiguracion = (filePath) => {
 };
 
 /**
- * Prepara los directorios necesarios, limpiando ejecuciones anteriores.
+ * Prepara los directorios necesarios, limpiando ejecuciones anteriores y depurando la caché huérfana.
  * @param {string} outputDir - La ruta final de salida.
  * @param {string} tempDir - La ruta temporal de salida.
+ * @param {string[]} [urlsActivas=[]] - Array de URLs activas para limpiar la caché huérfana.
  */
-const prepararEntorno = (outputDir, tempDir) => {
+const prepararEntorno = (outputDir, tempDir, urlsActivas = []) => {
     console.log("Preparando entorno de ejecución...");
     if (!fs.existsSync(DB_DOWNLOADS_PATH)) fs.mkdirSync(DB_DOWNLOADS_PATH, { recursive: true });
     if (!fs.existsSync(DB_CACHE_PATH)) fs.mkdirSync(DB_CACHE_PATH, { recursive: true });
@@ -145,6 +146,21 @@ const prepararEntorno = (outputDir, tempDir) => {
     fs.mkdirSync(tempDir, { recursive: true });
 
     fs.readdirSync(DB_DOWNLOADS_PATH).forEach(file => fs.unlinkSync(path.join(DB_DOWNLOADS_PATH, file)));
+
+    if (urlsActivas.length > 0) {
+        const nombresValidos = new Set(urlsActivas.map(url => Buffer.from(url).toString('base64')));
+        fs.readdirSync(DB_CACHE_PATH).forEach(file => {
+            if (!nombresValidos.has(file) && file !== '.gitkeep') {
+                try {
+                    fs.unlinkSync(path.join(DB_CACHE_PATH, file));
+                    console.log(`Caché huérfana eliminada: ${file}`);
+                } catch (err) {
+                    console.warn(`No se pudo eliminar archivo de caché huérfano ${file}: ${err.message}`);
+                }
+            }
+        });
+    }
+
     console.log("Entorno listo.");
 };
 
@@ -340,7 +356,7 @@ const procesarContenidoArchivo = (contenido) => {
                 resultados.invalidas.push(cleanLine);
                 resultados.stats.errores++;
             }
-        } else if (/^(?!-)([a-zA-Z0-9-]{1,63}(?<!-)\.)+[a-zA-Z]{2,}$/.test(cleanLine)) {
+        } else if (/^(?!-)([a-zA-Z0-9-]{1,63}(?<!-)\.)+(?:[a-zA-Z]{2,}|xn--[a-zA-Z0-9-]{2,})$/.test(cleanLine)) {
             resultados.dominios.push(cleanLine);
             resultados.stats.dominios++;
             resultados.stats.validas++;
@@ -502,13 +518,14 @@ const optimizarListas = async (ips, redes) => {
     console.log(`Ruta de salida configurada: ${finalOutputWebDir}`);
 
     try {
-        // --- FASE 1: PREPARACIÓN Y DESCARGA ---
-        prepararEntorno(finalOutputWebDir, finalTempOutputWebDir);
         const urlData = leerUrlsDesdeArchivo(URLS_FILE_PATH);
         if (urlData.length === 0) {
             console.log("No hay URLs para procesar. Saliendo.");
             return;
         }
+
+        const activeUrls = urlData.map(item => item.url);
+        prepararEntorno(finalOutputWebDir, finalTempOutputWebDir, activeUrls);
 
         console.log(`Iniciando descarga y procesamiento de ${urlData.length} URLs en paralelo...`);
         const resultadosDescargas = await Promise.all(urlData.map(async ({ url, consecutiveFails }) => {
